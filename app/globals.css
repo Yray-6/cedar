@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+.bg-hero{
+    background-image: url('/hero.svg');
+    background-size:cover;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bg-about{
+    background-image:url('/service-8.svg');
+    background-size:cover;
+    background-position:center;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.bg-services{
+    background-image:url('/services-hero.svg');
+    background-size:cover;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.bg-contact{
+    background-image:url('/contact-hero.png');
+    background-size:cover;
+}
+
+.bg-rental{
+    background-image:url('/main-car.svg');
+    background-size:cover;
 }
