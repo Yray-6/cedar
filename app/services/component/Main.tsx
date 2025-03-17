@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 // Define TypeScript interfaces for our data structure
@@ -157,10 +158,12 @@ const VisaServicesPage: React.FC = () => {
           <div className="flex flex-col md:flex-row gap-6 md:gap-8">
             {/* Image Column - Full width on mobile, partial on larger screens */}
             <div className="w-full md:w-2/5">
-              <img
+              <Image
                 src={service.mainImage}
                 alt={service.altText}
                 className="w-full h-auto rounded-lg shadow-md"
+                width={1000}
+                height={100}
               />
             </div>
 
