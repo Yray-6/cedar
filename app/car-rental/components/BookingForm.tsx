@@ -53,8 +53,8 @@ export default function BookingForm({ onSubmit }: BookingFormProps) {
         customerEmail: '',
         customerPhone: ''
       });
-    } catch (err) {
-      // Error handling is done at parent level
+    } catch (e) {
+        console.log(e)
     } finally {
       setIsSubmitting(false);
     }

@@ -1,9 +1,8 @@
 'use client'
 import { useState } from 'react';
-import Head from 'next/head';
 
 import BookingForm from '../components/BookingForm';
-import { Car,BookingFormData  } from '@/app/types';
+import { Car, BookingFormData } from '@/app/types';
 import CarCard from './CarCards';
 import BookingModal from './BookNow';
 
@@ -82,8 +81,15 @@ export default function Main() {
         setBookingSuccess(false);
       }, 5000);
       
-    } catch (error: any) {
-      setBookingError(error.message || 'Something went wrong');
+    } catch (error: unknown) {
+      // Properly type check the error before accessing properties
+      if (error instanceof Error) {
+        setBookingError(error.message);
+      } else if (typeof error === 'string') {
+        setBookingError(error);
+      } else {
+        setBookingError('Something went wrong');
+      }
       throw error; // Re-throw to let the form component know
     }
   };
@@ -118,8 +124,15 @@ export default function Main() {
         }, 3000);
       }, 2000);
       
-    } catch (error: any) {
-      setBookingError(error.message || 'Something went wrong');
+    } catch (error: unknown) {
+      // Properly type check the error before accessing properties
+      if (error instanceof Error) {
+        setBookingError(error.message);
+      } else if (typeof error === 'string') {
+        setBookingError(error);
+      } else {
+        setBookingError('Something went wrong');
+      }
       throw error; // Re-throw to let the form component know
     }
   };
@@ -150,7 +163,7 @@ export default function Main() {
           {bookingSuccess && (
             <div className="container mx-auto px-4 mb-4">
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                <strong>Success!</strong> Your booking has been submitted. We'll contact you shortly.
+                <strong>Success!</strong> Your booking has been submitted. We&apos;ll contact you shortly.
               </div>
             </div>
           )}
@@ -186,7 +199,7 @@ export default function Main() {
             </div>
             <div>
               <p className="font-bold">Booking Successful!</p>
-              <p className="text-sm">We'll contact you shortly with details.</p>
+              <p className="text-sm">We&apos;ll contact you shortly with details.</p>
             </div>
           </div>
         </div>

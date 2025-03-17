@@ -1,4 +1,4 @@
-import { LocateIcon, MailIcon, MapPin } from 'lucide-react'
+import {  MailIcon, MapPin } from 'lucide-react'
 import React from 'react'
 
 export default function Address() {

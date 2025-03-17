@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { Car,BookingFormData  } from '@/app/types';
+import { Car, BookingFormData } from '@/app/types';
+import Image from 'next/image';
 
 interface BookingModalProps {
   car: Car;
@@ -49,8 +50,15 @@ export default function BookingModal({ car, onClose, onSubmit }: BookingModalPro
         carName: car.name,
         dailyRate: car.dailyRate
       });
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong');
+    } catch (err: unknown) {
+      // Properly type check the error before accessing properties
+      if (err instanceof Error) {
+        setError(err.message);
+      } else if (typeof err === 'string') {
+        setError(err);
+      } else {
+        setError('Something went wrong');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -71,7 +79,7 @@ export default function BookingModal({ car, onClose, onSubmit }: BookingModalPro
         <div className="p-6">
           <div className="mb-6 flex items-center gap-4">
             <div className="w-32 h-20 rounded overflow-hidden">
-              <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
+              <Image src={car.image} alt={car.name} className="w-full h-full object-cover" width={1000} height={500} />
             </div>
             <div>
               <h3 className="font-bold text-lg">{car.name}</h3>

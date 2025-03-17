@@ -77,7 +77,7 @@ const ContactForm: React.FC = () => {
       setSubmitStatus({
         success: false,
         message:
-          "An error occurred while sending your message. Please try again.",
+          "An error occurred while sending your message. Please try again."+ error,
       });
     } finally {
       setIsSubmitting(false);

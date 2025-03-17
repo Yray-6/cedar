@@ -30,7 +30,7 @@ export default function Navbar() {
           </div>
           <div>
             <Link href={'/car-rental'}> 
-              <button className="bg-white text-blue px-4 py-2 rounded-xl">Let's Talk</button>
+              <button className="bg-white text-blue px-4 py-2 rounded-xl">Let&apos;s Talk</button>
             </Link>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
               <Link href={"/services"} onClick={toggleMenu}>Services</Link>
               <Link href={"/contact"} onClick={toggleMenu}>Contact Us</Link>
               <Link href={'/car-rental'} onClick={toggleMenu}> 
-                <button className="bg-white text-blue px-6 py-3 rounded-xl mt-4 font-semibold">Let's Talk</button>
+                <button className="bg-white text-blue px-6 py-3 rounded-xl mt-4 font-semibold">Let&apos;s Talk</button>
               </Link>
             </div>
           </div>
