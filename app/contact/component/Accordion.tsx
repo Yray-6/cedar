@@ -27,22 +27,22 @@ const Accordion: React.FC = () => {
     {
       title: "What Services Does cedar links Offer?",
       content:
-        "At nullam leo consectetur euismod enim. Orci donec sapien et semper fringilla pellentesque in diam mi. Pulvinar ante sed velit ac nibh.",
+        "Cedarlinks Nigeria Limited offers immigration advisory, expatriate quota processing, visa facilitation (including TWP, business, tourist, and STR visas), residence permit processing (CERPAC), meet and greet services, car rental with optional armed escort, and mobile security services, ensuring seamless travel and relocation support for clients in Nigeria.",
     },
     {
       title: "How Much Does cedar link Services Cost?",
       content:
-        "At nullam leo consectetur euismod enim. Orci donec sapien et semper fringilla pellentesque in diam mi. Pulvinar ante sed velit ac nibh.",
+        "Yes, we provide professional armed escort services for enhanced security.",
     },
     {
       title: "What Happens if My Visa Application is Denied?",
       content:
-        "At nullam leo consectetur euismod enim. Orci donec sapien et semper fringilla pellentesque in diam mi. Pulvinar ante sed velit ac nibh.",
+        "Yes, we provide meet and greet services for VIPs, first-time visitors, and regular travelers to ensure smooth airport arrivals and departures.",
     },
     {
       title: "What Types of Visas Does cedar Assist With?",
       content:
-        "At nullam leo consectetur euismod enim. Orci donec sapien et semper fringilla pellentesque in diam mi. Pulvinar ante sed velit ac nibh.",
+        "Yes, we assist companies in applying for and renewing expatriate quotas, including rendering returns to the Nigerian Immigration Service.",
     },
   ];
 
@@ -64,7 +64,9 @@ const Accordion: React.FC = () => {
         {/* Content section */}
         <div className="w-full md:w-3/5">
           <div className="mb-6 sm:mb-8 md:mb-10">
-            <p className="text-goldss text-sm sm:text-base mb-3 sm:mb-4 md:mb-5">Frequently Ask Question</p>
+            <p className="text-goldss text-sm sm:text-base mb-3 sm:mb-4 md:mb-5">
+              Frequently Ask Question
+            </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-5 md:mb-6 leading-tight">
               Everything You Need to Know About CedarLinks
             </h1>
@@ -78,7 +80,10 @@ const Accordion: React.FC = () => {
 
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
             {accordionItems.map((item, index) => (
-              <div key={index} className="border-b border-gray-200 pb-2 sm:pb-3 md:pb-4">
+              <div
+                key={index}
+                className="border-b border-gray-200 pb-2 sm:pb-3 md:pb-4"
+              >
                 <button
                   onClick={() => toggleItem(index)}
                   className="flex justify-between items-center w-full text-left py-3 sm:py-4"

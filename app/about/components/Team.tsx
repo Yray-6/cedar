@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Team() {
@@ -32,7 +33,7 @@ export default function Team() {
         </div>
         <div className="col-span-1 flex items-start sm:justify-end mt-4 sm:mt-0">
           <button className="bg-primary py-2 px-6 text-white rounded hover:bg-opacity-90 transition-colors">
-            Join Us
+           <Link href={'/contact'}>Join Us</Link> 
           </button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 // Define TypeScript interfaces for our data structure
@@ -150,7 +151,7 @@ const VisaServicesPage: React.FC = () => {
               {service.title}
             </h1>
             <button className="bg-primary text-white px-4 sm:px-6 py-2 sm:py-3 rounded font-medium hover:bg-navy-900 transition-colors duration-200 w-full sm:w-auto">
-              {service.buttonText}
+              <Link href={"/services"}>{service.buttonText}</Link>
             </button>
           </div>
 

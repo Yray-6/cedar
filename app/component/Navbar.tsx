@@ -18,7 +18,7 @@ export default function Navbar() {
         <p>Need Quick Response? Call US +tel:+234 803 304 1250</p>
       </div>
       <div className="bg-primary flex items-center py-2 justify-between px-[5%]">
-        <Image src={"/logo.png"} alt="logo" width={100} height={100} />
+      <Link href={"/"}>   <Image src={"/logo.png"} alt="logo" width={100} height={100} /></Link>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-16 items-center pr-[5%]">
