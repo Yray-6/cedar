@@ -36,7 +36,7 @@ export default function About() {
           </button>
           {isVisionOpen && (
             <p className="mt-3 text-typo text-xs sm:text-sm">
-         Cedarlinks Nigeria Limited is committed to excellence, integrity, and efficiency, providing seamless immigration, travel, and security solutions tailored to our clients' needs while ensuring compliance, professionalism, and customer satisfaction.
+         Cedarlinks Nigeria Limited is committed to excellence, integrity, and efficiency, providing seamless immigration, travel, and security solutions tailored to our clients&apos; needs while ensuring compliance, professionalism, and customer satisfaction.
             </p>
           )}
         </div>
