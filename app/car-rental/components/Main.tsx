@@ -1,5 +1,8 @@
 'use client'
 import { useState } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import BookingForm from '../components/BookingForm';
 import { Car, BookingFormData } from '@/app/types';
@@ -16,7 +19,7 @@ export default function Main() {
   const featuredCars: Car[] = [
     {
       id: 1,
-      name: 'Jeep XD',
+      name: 'Toyota Prado',
       image: '/jeep.jpg',
       seats: 5,
       fuelType: 'Gasoline',
@@ -25,8 +28,8 @@ export default function Main() {
     },
     {
       id: 2,
-      name: 'Ferrari Enzo',
-      image: '/ferrari.jpg',
+      name: 'LEXUS GX460',
+      image: '/lexus.png',
       seats: 2,
       fuelType: 'Electric',
       type: 'Sedan',
@@ -34,13 +37,32 @@ export default function Main() {
     },
     {
       id: 3,
-      name: 'Fiat Cope',
-      image: '/fiat.jpg',
+      name: 'HYUNDAI SANTA FE',
+      image: '/hyndai.png',
       seats: 4,
       fuelType: 'Gasoline',
-      type: 'Mini coupe',
+      type: 'Wagon',
       dailyRate: 167
     }
+    ,
+    {
+      id: 4,
+      name: 'Hyundai Sonata',
+      image: '/sonata.svg',
+      seats: 4,
+      fuelType: 'Gasoline',
+      type: 'Sedan',
+      dailyRate: 167
+    },
+    {
+      id: 6,
+      name: 'Nissan Centra',
+      image: '/nissan.svg',
+      seats: 4,
+      fuelType: 'Gasoline',
+      type: 'Sedan',
+      dailyRate: 167
+    },
   ];
   
   const handleBookNowClick = (car: Car) => {
@@ -136,50 +158,111 @@ export default function Main() {
       throw error; // Re-throw to let the form component know
     }
   };
+
+  // Settings for the slider
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+  // Custom CSS for carousel to be added in useEffect
+  const carouselStyles = `
+    .car-slider .slick-arrow {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    .car-slider .slick-arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .car-slider .slick-prev {
+      left: -5px;
+    }
+    .car-slider .slick-next {
+      right: -5px;
+    }
+    .car-slider .slick-slide {
+      padding: 0 10px;
+    }
+    .car-slider .slick-list {
+      margin: 0 -10px;
+    }
+  `;
   
   return (
     <div className=''>
+      {/* Add custom styles */}
+      <style jsx global>{carouselStyles}</style>
     
-       {/* Featured Cars - Appears before booking form as requested */}
-       <section className="py-12 px-[5%] ">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-center mb-2">Our Featured Cars</h2>
-            <div className="w-24 h-1 bg-goldss mx-auto mb-8"></div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Featured Cars - Now with Carousel */}
+      <section className="py-12 px-[5%]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center mb-2">Our Featured Cars</h2>
+          <div className="w-24 h-1 bg-goldss mx-auto mb-8"></div>
+          
+          <div className="car-slider">
+            <Slider {...sliderSettings}>
               {featuredCars.map((car) => (
-                <CarCard
-                  key={car.id} 
-                  car={car} 
-                  onBookNow={handleBookNowClick} 
-                />
+                <div key={car.id} className="px-2">
+                  <CarCard
+                    car={car} 
+                    onBookNow={handleBookNowClick} 
+                  />
+                </div>
               ))}
+            </Slider>
+          </div>
+        </div>
+      </section>
+        
+      {/* Booking Form Section */}
+      <section className="mb-12">
+        {bookingSuccess && (
+          <div className="container mx-auto px-4 mb-4">
+            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+              <strong>Success!</strong> Your booking has been submitted. We&apos;ll contact you shortly.
             </div>
           </div>
-        </section>
+        )}
         
-        {/* Booking Form Section */}
-        <section className="mb-12">
-          {bookingSuccess && (
-            <div className="container mx-auto px-4 mb-4">
-              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                <strong>Success!</strong> Your booking has been submitted. We&apos;ll contact you shortly.
-              </div>
+        {bookingError && (
+          <div className="container mx-auto px-4 mb-4">
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+              <strong>Error:</strong> {bookingError}
             </div>
-          )}
-          
-          {bookingError && (
-            <div className="container mx-auto px-4 mb-4">
-              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                <strong>Error:</strong> {bookingError}
-              </div>
-            </div>
-          )}
-            <h2 className="text-3xl font-semibold mt-10 text-center mb-2">Book Now</h2>
-            <div className="w-24 h-1 bg-goldss mx-auto mb-8"></div>
-          <BookingForm onSubmit={handleMainFormSubmit} />
-        </section>
-           {/* Modal for booking from car cards */}
+          </div>
+        )}
+        <h2 className="text-3xl font-semibold mt-10 text-center mb-2">Book Now</h2>
+        <div className="w-24 h-1 bg-goldss mx-auto mb-8"></div>
+        <BookingForm onSubmit={handleMainFormSubmit} />
+      </section>
+
+      {/* Modal for booking from car cards */}
       {isModalOpen && selectedCar && (
         <BookingModal
           car={selectedCar}

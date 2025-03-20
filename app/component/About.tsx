@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import { ArrowRight, ArrowUp, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
