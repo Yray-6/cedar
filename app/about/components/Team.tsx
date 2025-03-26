@@ -12,7 +12,7 @@ export default function Team() {
     { id: 5, image: "/service-22.svg", name: "Nathaniel N. OBIKE", role: "Logistics Coordinator (I)" },
     { id: 6, image: "/service-11.svg", name: "Joseph A. OBALADE", role: "Admin/HR Manager" },
     { id: 7, image: "/service-7.svg", name: "Michael O. OLATUNJI", role: " Business Executive" },
-    { id: 8, image: "/servicce-5.svg", name: "Hamed Lanre SHOLEYE", role: "Immigration" },
+    { id: 8, image: "/servicce-5.svg", name: "Hamed Lanre SHOLEYE", role: "CHAUFFUER" },
     { id: 9, image: "/service-9.svg", name: "Olufemi O. OLAKUNLE,", role: "Logistics Coordinator (I)" },
   ];
 

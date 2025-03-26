@@ -96,7 +96,7 @@ export default function GetInTouch() {
           </p>
           <div className="relative w-full mt-4">
             <Image 
-              src={'/get-touch.png'} 
+              src={'/getin.svg'} 
               alt="Contact us illustration" 
               width={1000} 
               height={200} 

@@ -8,7 +8,7 @@ export default function OurService() {
   const services = [
     { image: "/service-1.svg", title: "Immigration" },
     { image: "/service-2.svg", title: "Quota Processing" },
-    { image: "/service-3.svg", title: "Residence Permit" },
+    { image: "/hero.svg", title: "Residence Permit" },
     { image: "/service-4.svg", title: "Immigration" },
     { image: "/service-5.svg", title: "Quota Processing" },
     { image: "/service-6.svg", title: "Residence Permit" },

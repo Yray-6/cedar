@@ -19,7 +19,8 @@ export default function Footer() {
               <Briefcase size={16} className="flex-shrink-0" /> Monday - Friday / 8AM to 5PM
             </p>
             <p className="flex items-center gap-2 sm:gap-4">
-              <Phone size={16} className="flex-shrink-0" /> +234 704 224 9988
+              <Phone size={16} className="flex-shrink-0" /> +234 803 304 1250     
+              <Phone size={16} className="flex-shrink-0" /> +234 803 282 4602 
             </p>
           </div>
           <div className="text-white mt-2 flex gap-2 items-center">

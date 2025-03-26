@@ -42,7 +42,7 @@ const visaServicesData: VisaService[] = [
     id: "advisory",
     title: "Immigration advisory",
     buttonText: "Call us",
-    mainImage: "/advisoryy.svg",
+    mainImage: "/service-1.svg",
     altText: "Passports being held",
     descriptionTitle: "Description",
     descriptionParagraphs: [
@@ -111,7 +111,7 @@ const visaServicesData: VisaService[] = [
     id: "car-rental",
     title: "Car rental",
     buttonText: "Apply Now",
-    mainImage: "/car-rental.png",
+    mainImage: "/car-rent.svg",
     altText: "Passports being held",
     descriptionTitle: "Description",
     descriptionParagraphs: [
@@ -130,7 +130,7 @@ const visaServicesData: VisaService[] = [
     id: "crew-change",
     title: "CREW CHANGE AND PERSONNEL MANAGEMENT",
     buttonText: "Apply Now",
-    mainImage: "/crew-change.svg",
+    mainImage: "/last.svg",
     altText: "Passports being held",
     descriptionTitle: "Description",
     descriptionParagraphs: [
@@ -158,11 +158,12 @@ const VisaServicesPage: React.FC = () => {
           {/* Content Section - Stack on mobile, side by side on larger screens */}
           <div className="flex flex-col md:flex-row gap-6 md:gap-8">
             {/* Image Column - Full width on mobile, partial on larger screens */}
-            <div className="w-full md:w-2/5">
+            <div className="w-full md:h-[400px] overflow-hidden md:w-2/5">
               <Image
                 src={service.mainImage}
                 alt={service.altText}
                 className="w-full h-auto rounded-lg shadow-md"
+                objectFit="contain"
                 width={1000}
                 height={100}
               />
