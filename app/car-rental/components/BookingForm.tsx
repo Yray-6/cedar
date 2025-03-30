@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { BookingFormData } from "@/app/types";
 import ConfirmationModal from "./Confirmation";
+import LoadingPage from "@/app/Loading";
 
 interface BookingFormProps {
   onSubmit: (formData: BookingFormData) => Promise<void>;
@@ -334,6 +335,7 @@ export default function BookingForm({ onSubmit }: BookingFormProps) {
               Need Quick Response? Call US +234 803 304 1250 OR 080 3282 4602
             </p>
           </div>
+          {isSubmitting && <LoadingPage text='Booking Please wait'/>}
         </div>
       </form>
 

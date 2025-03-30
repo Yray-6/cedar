@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Enjoy() {
@@ -14,19 +15,19 @@ export default function Enjoy() {
             Cedarlinks is ready to serve the best experience in car rental.
           </p>
           <button className="text-black py-2 px-5 sm:px-7 text-sm sm:text-base rounded bg-goldss hover:bg-opacity-90 transition-colors duration-300">
-            Rent Now
+            <Link href={"/car-rental"}>Rent Now</Link>
           </button>
         </div>
       </div>
-      
+
       {/* Right Section with Car Image */}
       <div className="col-span-1 lg:col-span-5 flex items-center justify-center py-4 sm:my-10 bg-white">
         <div className="w-full px-4 lg:px-0">
-          <Image 
-            src={'/main-car.svg'} 
-            width={1000} 
-            height={400} 
-            alt="Luxury car rental" 
+          <Image
+            src={"/main-car.svg"}
+            width={1000}
+            height={400}
+            alt="Luxury car rental"
             className="w-full h-auto object-contain"
             priority
           />

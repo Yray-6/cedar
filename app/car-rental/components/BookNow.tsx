@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Car, BookingFormData } from '@/app/types';
 import Image from 'next/image';
+import LoadingPage from '@/app/Loading';
 
 interface BookingModalProps {
   car: Car;
@@ -243,6 +244,7 @@ export default function BookingModal({ car, onClose, onSubmit }: BookingModalPro
           </div>
         </div>
       </div>
+      {isSubmitting && <LoadingPage text='Booking Please wait'/>}
     </div>
   );
 }

@@ -151,7 +151,7 @@ const VisaServicesPage: React.FC = () => {
               {service.title}
             </h1>
             <button className="bg-primary text-white px-4 sm:px-6 py-2 sm:py-3 rounded font-medium hover:bg-navy-900 transition-colors duration-200 w-full sm:w-auto">
-              <Link href={"/services"}>{service.buttonText}</Link>
+              <Link href={"/contact"}>{service.buttonText}</Link>
             </button>
           </div>
 

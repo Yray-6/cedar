@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import LoadingPage from "@/app/Loading";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -216,6 +217,7 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
       )}
+           {isSubmitting && <LoadingPage text='Sending Please wait'/>}
     </section>
   );
 };

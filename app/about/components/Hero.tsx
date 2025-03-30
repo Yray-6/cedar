@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Hero() {
@@ -8,7 +9,7 @@ export default function Hero() {
         <p className='text-goldss text-xs sm:text-sm'>with respect to each customer</p>
         <p className='text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight my-5'>About Us</p>
         <button className='rounded-lg bg-goldss px-4 py-2 mt-2 sm:mt-4 hover:bg-opacity-90 transition-colors text-sm sm:text-base'>
-          Contact Us
+       <Link href={'contact'}>   Contact Us</Link>
         </button>
       </div>
     </div>

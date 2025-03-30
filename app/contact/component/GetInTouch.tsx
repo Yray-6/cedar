@@ -1,4 +1,5 @@
 'use client'
+import LoadingPage from "@/app/Loading";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -164,6 +165,7 @@ export default function GetInTouch() {
             </div>
           </form>
         </div>
+             {isSubmitting && <LoadingPage text='Booking Please wait'/>}
       </div>
       
       {/* Confirmation Modal */}

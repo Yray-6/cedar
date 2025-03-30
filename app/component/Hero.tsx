@@ -1,4 +1,5 @@
 import { Send, ThumbsUp, UserPen } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function Hero() {
@@ -21,10 +22,10 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 font-semibold py-3">
             <button className="bg-primary px-4 py-2 md:px-5 md:py-3 rounded-xl text-sm md:text-base w-full sm:w-auto">
-              Apply Now
+              <Link href={"/contact"}>Apply Now</Link>
             </button>
             <button className="bg-white text-blue px-4 py-2 md:px-5 md:py-3 rounded-xl text-sm md:text-base w-full sm:w-auto">
-              About Us
+              <Link href={"/about"}>About Us</Link>
             </button>
           </div>
         </div>

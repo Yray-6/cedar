@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Link from 'next/link';
 
 type ServiceCardProps = {
   title: string;
@@ -16,9 +17,9 @@ const ServiceCard = ({ title, description, readMoreLink }: ServiceCardProps) => 
   <div className="bg-white p-6 rounded shadow-md h-[250px] flex flex-col">
     <h3 className="font-semibold text-lg mb-3">{title}</h3>
     <p className="text-typo mb-4 text-sm flex-grow">{description}</p>
-    <a href={readMoreLink} className="text-blue-500 hover:underline mt-auto">
-      Read More
-    </a>
+    <Link href={readMoreLink} className="text-blue-500 hover:underline mt-auto">
+      Find Out More
+    </Link>
   </div>
 );
 
@@ -53,22 +54,22 @@ export default function Story() {
     {
       title: "Visa processing",
       description: "We assist our clients to process visas including Temporary Work Permit (TWP) for nonresident expatriates with short stay",
-      link: "#"
+      link: "/contact"
     },
     {
       title: "Residence permit",
       description: "We can assist to process Company's Combined Expatriate Residence Permit and Aliens Card (CERPAC), which is an obligation for expatriates on Subject To Regularisation (STR) Visa. We also renew expired CERPAC",
-      link: "#"
+      link: "/contact"
     },
     {
       title: "Armed escort",
       description: "Cedarlinks Nigeria Limited offers armed escort services to ensure the safety of individuals and assets during transit.",
-      link: "#"
+      link: "/contact"
     },
     {
       title: "Processing",
       description: "Grant for Quota line-qua-non for doing business with international flavour",
-      link: "#"
+      link: "/contact"
     }
   ];
 
