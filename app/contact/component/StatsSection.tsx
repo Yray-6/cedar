@@ -23,7 +23,7 @@ const StatsSection = () => {
           
           <div className="w-full md:w-1/2">
             <p className="text-gray-400 text-sm sm:text-base">
-              Aliquam pellentesque lorem dictum leo mauris nulla id. Ante id odio in quis adipiscing amet adipiscing velit fringilla. Leo quisque sem nisi habitasse molestie volutpat. Nec elementum dolor.
+            At Cedarlinks Nigeria Limited, our track record speaks for itself. With over 20 years of experience, we have successfully processed thousands of visas, and expatriate quotas, ensuring seamless travel and relocation for individuals and businesses
             </p>
           </div>
         </div>

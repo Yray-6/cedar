@@ -71,10 +71,7 @@ const Accordion: React.FC = () => {
               Everything You Need to Know About CedarLinks
             </h1>
             <p className="text-gray-600 text-sm sm:text-base">
-              At nullam leo consectetur euismod enim. Orci donec sapien et
-              semper fringilla pellentesque in diam mi. Pulvinar ante sed velit
-              ac nibh. Amet duis orci nibh nullam. Phasellus suspendisse ornare
-              arcu eu orci urna justo.
+            Cedarlinks Nigeria, established in 2001 as a Limited Liability Company is a budding facilitating logistics company of note, bringing   expediencies into business operations in Nigeria.The company is focused on Immigration consultancy and Logistics services. Our office is located at The Departure Floor, Murtala Muhammed International Airport, Ikeja, Lagos.
             </p>
           </div>
 
