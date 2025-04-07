@@ -165,7 +165,7 @@ export default function GetInTouch() {
             </div>
           </form>
         </div>
-             {isSubmitting && <LoadingPage text='Booking Please wait'/>}
+             {isSubmitting && <LoadingPage text='Sending Please wait'/>}
       </div>
       
       {/* Confirmation Modal */}
