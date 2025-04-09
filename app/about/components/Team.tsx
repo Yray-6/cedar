@@ -8,21 +8,23 @@ export default function Team() {
     { 
       id: 1, 
       image: "/soji.svg", 
-      name: "Soji Ajibode", 
+      name: "Soji AJIBODE", 
       role: "MD/CEO",
       isLeader: true,
       profileLink: "/about/ceo"  // Assuming you have a profile page route
     },
-    { id: 2, image: "/joseph.svg", name: "Joseph Abiodun Obalade", role: "ADMIN/MANAGER" },
-    { id: 3, image: "/nnamdi3.svg", name: "Nnamdi Obike Nathaniel", role: "Logistics cordinator" },
+    { id: 2, image: "/joseph.svg", name: "Joseph Abiodun Obalade", role: "ADMIN/HR MANAGER" },
+    { id: 3, image: "/nnamdi3.svg", name: "Nnamdi Obike NATHANIEL", role: "Logistics cordinator (I)" },
     { id: 4, image: "/emmanuel4.svg", name: "Emmanuel A. AWOTORUVWE", role: "Logistics Coordinator (I)" },
-    { id: 5, image: "/nathaniel.svg", name: "Nathaniel N. OBIKE", role: "Logistics Coordinator (I)" },
-    { id: 6, image: "/abdul.svg", name: "Abdul wasiu Olalekan", role: "Logistics Coordinator (I)" },
     { id: 7, image: "/michael.svg", name: "Michael O. OLATUNJI", role: " Business Executive" },
-    { id: 8, image: "/moses.svg", name: "Moses Ogutola", role: "CHAUFFUER" },
-    { id: 9, image: "/ifeoluwa.svg", name: "Ifeoluwa Olatubosun", role: "CHAUFFUER" },
-    { id: 10, image: "/sunday.svg", name: "Sunday Olatubosun", role: "CHAUFFUER" },
-    { id: 11, image: "/ahmed.svg", name: "Ahmed Oluwafemi", role: "CHAUFFUER" }
+    { id: 6, image: "/abdul.svg", name: "Abdulwasiu Olalekan BANKOLE", role: "Logistics Coordinator (II)" },
+    { id: 13, image: "/olufemi.svg", name: "Oladipupo Olufemi OLAKUNLE", role: "Logistics Coordinator (II)" },
+    { id: 11, image: "/nathaniel.svg", name: "Ahmed Lanre SHOLEYE", role: "CHAUFFUER" },
+    { id: 10, image: "/sunday.svg", name: "Sunday Olatubosun AMINU", role: "CHAUFFUER" },
+    { id: 8, image: "/moses.svg", name: "Moses OGUNTOLA", role: "CHAUFFUER" },
+    { id: 9, image: "/ifeoluwa.svg", name: "Ifeoluwa Olatubosun OLANIHUN", role: "CHAUFFUER" },
+    { id: 12, image: "/ahmed.svg", name: "Hamed Oluwafemi ADISA", role: "CHAUFFUER" },
+
   ];
 
   return (
