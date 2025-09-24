@@ -5,9 +5,10 @@ import { Car } from '@/app/types';
 interface CarCardProps {
   car: Car;
   onBookNow: (car: Car) => void;
+  formatPrice: (price: number) => string;
 }
 
-export default function CarCard({ car, onBookNow }: CarCardProps) {
+export default function CarCard({ car, onBookNow, formatPrice }: CarCardProps) {
   return (
     <div className="border rounded-lg overflow-hidden shadow-md">
       <div className="relative h-48 w-full">
@@ -47,7 +48,7 @@ export default function CarCard({ car, onBookNow }: CarCardProps) {
         
         <div className="mt-4">
           <p className="text-gray-600">Daily rate from</p>
-          <p className="text-2xl font-bold">${car.dailyRate}</p>
+          <p className="text-2xl font-bold">{formatPrice(car.dailyRate)}</p>
         </div>
         
         <button 

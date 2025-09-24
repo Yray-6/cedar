@@ -15,8 +15,8 @@ export default function Main() {
   const [bookingSuccess, setBookingSuccess] = useState<boolean>(false);
   const [bookingError, setBookingError] = useState<string>('');
   
-  // Sample car data - in a real app, this would come from an API/database
-  const featuredCars: Car[] = [
+  // Sample car data - separated by type
+  const suvCars: Car[] = [
     {
       id: 1,
       name: 'Toyota Prado',
@@ -24,46 +24,71 @@ export default function Main() {
       seats: 5,
       fuelType: 'Gasoline',
       type: 'SUV',
-      dailyRate: 200
+      dailyRate: 130000
     },
     {
       id: 2,
       name: 'LEXUS GX460',
       image: '/lexus.png',
-      seats: 2,
-      fuelType: 'Electric',
-      type: 'Sedan',
-      dailyRate: 340
-    },
-    {
-      id: 3,
-      name: 'HYUNDAI SANTA FE',
-      image: '/hyndai.png',
       seats: 4,
       fuelType: 'Gasoline',
-      type: 'Wagon',
-      dailyRate: 167
+      type: 'SUV',
+      dailyRate: 160000
+    },
+    {
+      id: 7,
+      name: 'Mistibushi Pajero',
+      image: '/pajero.jpeg',
+      seats: 4,
+      fuelType: 'Gasoline',
+      type: 'SUV',
+      dailyRate: 110000
+    },
+    {
+      id: 5,
+      name: 'LEXUS LX570',
+      image: '/lexus-lxs.jpg',
+      seats: 4,
+      fuelType: 'Gasoline',
+      type: 'SUV',
+      dailyRate: 350000
     }
-    ,
+  ];
+
+  const sedanCars: Car[] = [
+    {
+      id: 3,
+      name: 'Toyota Camry',
+      image: '/camry.avif',
+      seats: 4,
+      fuelType: 'Gasoline',
+      type: 'Sedan',
+      dailyRate: 90000
+    },
     {
       id: 4,
       name: 'Hyundai Sonata',
-      image: '/sonata.svg',
+      image: '/hyundai.webp',
       seats: 4,
       fuelType: 'Gasoline',
       type: 'Sedan',
-      dailyRate: 167
+      dailyRate: 90000
     },
     {
       id: 6,
-      name: 'Nissan Centra',
+      name: 'Nissan Sentra',
       image: '/nissan.svg',
       seats: 4,
       fuelType: 'Gasoline',
       type: 'Sedan',
-      dailyRate: 167
-    },
+      dailyRate: 90000
+    }
   ];
+  
+  // Function to format price with commas and Naira symbol
+  const formatPrice = (price: number): string => {
+    return `₦${price.toLocaleString()}`;
+  };
   
   const handleBookNowClick = (car: Car) => {
     setSelectedCar(car);
@@ -219,19 +244,42 @@ export default function Main() {
       {/* Add custom styles */}
       <style jsx global>{carouselStyles}</style>
     
-      {/* Featured Cars - Now with Carousel */}
+      {/* SUV Section */}
       <section className="py-12 px-[5%]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center mb-2">Our Featured Cars</h2>
+          <h2 className="text-3xl font-semibold text-center mb-2">Our Premium SUVs</h2>
           <div className="w-24 h-1 bg-goldss mx-auto mb-8"></div>
           
           <div className="car-slider">
             <Slider {...sliderSettings}>
-              {featuredCars.map((car) => (
+              {suvCars.map((car) => (
                 <div key={car.id} className="px-2">
                   <CarCard
                     car={car} 
                     onBookNow={handleBookNowClick} 
+                    formatPrice={formatPrice}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </section>
+
+      {/* Sedan Section */}
+      <section className="py-12 px-[5%] bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center mb-2">Our Luxury Sedans</h2>
+          <div className="w-24 h-1 bg-goldss mx-auto mb-8"></div>
+          
+          <div className="car-slider">
+            <Slider {...sliderSettings}>
+              {sedanCars.map((car) => (
+                <div key={car.id} className="px-2">
+                  <CarCard
+                    car={car} 
+                    onBookNow={handleBookNowClick} 
+                    formatPrice={formatPrice}
                   />
                 </div>
               ))}
