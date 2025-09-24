@@ -26,6 +26,11 @@ export default function BookingModal({ car, onClose, onSubmit }: BookingModalPro
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   
+  // Function to format price with commas and Naira symbol
+  const formatPrice = (price: number): string => {
+    return `₦${price.toLocaleString()}`;
+  };
+  
   useEffect(() => {
     // Prevent background scrolling when modal is open
     document.body.style.overflow = 'hidden';
@@ -84,7 +89,7 @@ export default function BookingModal({ car, onClose, onSubmit }: BookingModalPro
             </div>
             <div>
               <h3 className="font-bold text-lg">{car.name}</h3>
-              <p className="text-gray-600">Daily Rate: ${car.dailyRate}</p>
+              <p className="text-gray-600">Daily Rate: {formatPrice(car.dailyRate)}</p>
             </div>
           </div>
           
@@ -223,7 +228,7 @@ export default function BookingModal({ car, onClose, onSubmit }: BookingModalPro
                       onChange={handleChange}
                       required
                       className="w-full p-2 border rounded-md"
-                      placeholder="+1234567890"
+                      placeholder="+2348012345678"
                     />
                   </div>
                 </div>

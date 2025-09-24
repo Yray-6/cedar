@@ -172,9 +172,11 @@ export default function BookingForm({ onSubmit }: BookingFormProps) {
                   <option value="">Select Car</option>
                   <option value="Toyota Prado">Toyota Prado</option>
                   <option value="LEXUS GX460">LEXUS GX460</option>
-                  <option value="HYUNDAI SANTA FE">HYUNDAI SANTA FE</option>
+                  <option value="Mistibushi Pajero">Mistibushi Pajero</option>
+                  <option value="LEXUS LX570">LEXUS LX570</option>
+                  <option value="Toyota Camry">Toyota Camry</option>
                   <option value="Hyundai Sonata">Hyundai Sonata</option>
-                  <option value="Nissan Centra">Nissan Centra</option>
+                  <option value="Nissan Sentra">Nissan Sentra</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                   <svg
@@ -335,7 +337,7 @@ export default function BookingForm({ onSubmit }: BookingFormProps) {
               Need Quick Response? Call US +234 803 304 1250 OR 080 3282 4602
             </p>
           </div>
-          {isSubmitting && <LoadingPage text='Booking Please wait'/>}
+          {isSubmitting && <LoadingPage text="Booking Please wait" />}
         </div>
       </form>
 
